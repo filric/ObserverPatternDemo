@@ -6,20 +6,20 @@ namespace ObserverPatternDemo
     {
         static void Main(string[] args)
         {
-            Subject subject = new Subject();
+            Channel channel = new Channel();
 
-            Observer observer1 = new Observer("Observer 1");
-            subject.Subscribe(observer1);
+            Subscriber subscriber1 = new Subscriber("Subscriber 1");
+            channel.Subscribe(subscriber1);
 
-            Observer observer2 = new Observer("Observer 2");
-            subject.Subscribe(observer2);
+            Subscriber subscriber2 = new Subscriber("Subscriber 2");
+            channel.Subscribe(subscriber2);
 
-            subject.Inventory++;
+            channel.Inventory++;
 
-            Observer observer3 = new Observer("Observer 3");
-            subject.Subscribe(observer3);
+            Subscriber subscriber3 = new Subscriber("Subscriber 3");
+            channel.Subscribe(subscriber3);
 
-            subject.Inventory++;
+            channel.Inventory++;
 
             Console.ReadLine();
         }

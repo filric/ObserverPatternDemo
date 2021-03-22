@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ObserverPatternDemo
 {
-    public class Subject : ISubject
+    public class Channel : IChannel
     {
-        private List<Observer> observers = new List<Observer>();
+        private List<Subscriber> Subscribers = new List<Subscriber>();
         private int _int;
 
         public int Inventory
@@ -27,21 +27,21 @@ namespace ObserverPatternDemo
             }
         }
 
-        public void Subscribe(Observer observer)
+        public void Subscribe(Subscriber subscriber)
         {
-            observers.Add(observer);
+            Subscribers.Add(subscriber);
         }
 
-        public void Unsubscribe(Observer observer)
+        public void Unsubscribe(Subscriber subscriber)
         {
-            observers.Remove(observer);
+            subscribers.Remove(subscriber);
         }
 
         public void Notify()
         {
-            foreach (var observer in observers)
+            foreach (var subscriber in subscribers)
             {
-                observer.Update();
+                subscriber.Update();
             }
         }
     }
